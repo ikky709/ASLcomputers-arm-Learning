@@ -16,7 +16,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     - name: Deploy Resource group with Az Cli
-      uses: Azure/cli@v2
+      uses: Azure/cli@v1
       with:
         inlinescript:
           az deployment sub create --location "uk west" --template-file ./ASLcomputers-arm-Learning/Arm-templates/ResourceGroup.Json
