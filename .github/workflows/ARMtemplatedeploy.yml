@@ -7,21 +7,29 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ResourceGroupName: ASL-Prod-Resources
-      ResourceGroupLocation: "UK West"
+      ResourceGroupLocation: "UKWest"
     steps:
     - uses: actions/checkout@master
     
+    - name: Login to Azure
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
-  
+    - name: Deploy Resource Group
     - uses: Azure/cli@v1
-      with:
-        inlinescript: | 
-        #!/bin/bash
-        az group create --name ${{ env.ResourceGroupName }} --location ${{ env.ResourceGroupLocation }}
-        echo "Azure resource group created"
+      with: 
+        scope: Subcription
+        SubscriptionID: a73fb319-c5b6-4ccb-a1f0-8091d63dfe75
+        region: UK West
+        template: ./arm-templates/Resourcegroup.Json
+        deploymentname: ASL deploy
+          
+        
+        
+
+
+
 
 
 
