@@ -19,7 +19,7 @@ jobs:
     
     - uses: Azure/arm-deploy@v1
       with: 
-        scope: Subcription
+        scope: subscription
         subscriptionId: a73fb319-c5b6-4ccb-a1f0-8091d63dfe75
         region: UK west
         template: ./arm-templates/Resourcegroup.Json
