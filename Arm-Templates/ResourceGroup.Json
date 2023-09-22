@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Location": {
+            "type": "string",
+            "metadata": {
+                "description": "Enter a location to deploy the resource to"
+            },
+            "defaultValue": "UK West"
+        },
+        "ResourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "enter Name for resource group"
+            },
+            "defaultValue": "ASL-Prod-Resources"
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('ResourceGroupName')]",
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2022-09-01",
+            "location": "[parameters ('Location')]",
+            "dependsOn": [],
+            "tags": {}
+        }
+     ],
+    "outputs": {}
+}
+             
