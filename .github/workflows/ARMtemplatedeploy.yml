@@ -8,8 +8,11 @@ jobs:
 
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      ResourceGroupName: ASL-Prod-Resources
+      ResourceGroupLocation: "UK West"
     steps:
-    - uses: actions/checkout@v2 
+    - uses: actions/checkout@master
     
     - uses: azure/login@v1
       with:
@@ -19,5 +22,5 @@ jobs:
       uses: Azure/cli@v1
       with:
         inlinescript:
-          az deployment sub create --location "uk west" --template-file ./ASLcomputers-arm-Learning/Arm-templates/ResourceGroup.Json
+          az group create --name ${{ env.ResourceGroupName }} --location ${{ env.ResourceGroupLocation}}
         
