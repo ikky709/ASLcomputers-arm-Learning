@@ -15,12 +15,13 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     
-    - name: Deploy Resource group with Az Cli
-      uses: Azure/cli@v1
-      with:
-        inlinescript: |
-           #!/bin/bash
-          az group create --name ${{ env.ResourceGroupName }} --location ${{ env.ResourceGroupLocation}}
+  
+    - uses: Azure/cli@v1
+      with: 
+        inlinescript: | 
+        #!/bin/bash
+          az group create --name ${{ env.ResourceGroupName }} --location ${{ env.ResourceGroupLocation }}
+          echo "Azure resource group created"
 
 
 
