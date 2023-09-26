@@ -36,7 +36,7 @@ jobs:
         resourceGroupName: ${{ env.ResourceGroupName}}
         subscriptionId: ${{ env.subscriptionId}}
         region: ${{ env.ResourceGroupLocation}}
-        template: .\bicep-templates\VirtualNetwork.bicep
+        template: ./bicep-templates/VirtualNetwork.bicep
         deploymentName: ASL
           
         
