@@ -1,4 +1,4 @@
-param Vnetprefix string
+param Vnetprefix string = 'ASL-Coop'
 param Location string = resourceGroup().location
 
 var VnetName = '${Vnetprefix}-vnet'
