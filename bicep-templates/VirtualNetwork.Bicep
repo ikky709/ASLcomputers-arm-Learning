@@ -1,11 +1,10 @@
 param Vnetprefix string = 'ASL-Coop'
-param Location string = resourceGroup().location
-
+param Location string  = 'UK West'
 var VnetName = '${Vnetprefix}-vnet'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
   name: VnetName
-  location: location
+  location: Location
   properties: {
     addressSpace: {
       addressPrefixes: [
