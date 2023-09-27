@@ -12,8 +12,7 @@ jobs:
       subscriptionId: a73fb319-c5b6-4ccb-a1f0-8091d63dfe75
     steps:
     - uses: actions/checkout@v4
-      with:
-        path: repo
+    
 
     - name: Login to Azure
       uses: azure/login@v1
