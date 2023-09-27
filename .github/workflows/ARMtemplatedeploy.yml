@@ -11,10 +11,8 @@ jobs:
       ResourceGroupLocation: "UK West"
       subscriptionId: a73fb319-c5b6-4ccb-a1f0-8091d63dfe75
     steps:
-    - uses: actions/checkout@v2
-      with:
-        path: repo
-
+    - uses: actions/checkout@v4
+    
     
 
     - name: Login to Azure
